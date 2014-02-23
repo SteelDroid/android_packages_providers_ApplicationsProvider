@@ -98,7 +98,6 @@ public class ApplicationsProvider extends ContentProvider {
     // Handler that runs DB updates.
     private Handler mHandler;
 
-
     /**
      * We delay application updates by this many millis to avoid doing more than one update to the
      * applications list within this window.
@@ -197,7 +196,6 @@ public class ApplicationsProvider extends ContentProvider {
     // ----------
     // END ASYC UPDATE CODE
     // ----------
-
 
     /**
      * Creates an in-memory database for storing application info.
@@ -413,7 +411,7 @@ public class ApplicationsProvider extends ContentProvider {
      */
     private void updateApplicationsList(String packageName) {
         if (DBG) Log.d(TAG, "Updating database (packageName = " + packageName + ")...");
-        
+
         DatabaseUtils.InsertHelper inserter = 
                 new DatabaseUtils.InsertHelper(mDb, APPLICATIONS_TABLE);
         int nameCol = inserter.getColumnIndex(NAME);
